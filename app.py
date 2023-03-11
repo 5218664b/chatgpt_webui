@@ -141,4 +141,4 @@ with gr.Blocks(css=css) as demo:
     submit.click(lambda :"", None, message)
     print("4")
     #demo.launch(server_name="0.0.0.0", debug = True, share=is_google_colab())
-    demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=is_google_colab()) # 可自定义端口
+    demo.queue().launch(server_name="0.0.0.0", share=is_google_colab()) # 可自定义端口
