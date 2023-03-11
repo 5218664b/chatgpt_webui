@@ -97,17 +97,17 @@ if ((email and password) or access_token or session_token):
     css = "style.css"
 else:
     css = None
-print("test1");
+
 with gr.Blocks(css=css) as demo:
     
-    args = get_args()
+    #args = get_args()
     
-    if not args.no_markdown:
-        gr.Markdown("""<h1><center>ChatGPT BOT build by revChatGPT & Gradio</center></h1>""")
+    #if not args.no_markdown:
+    #    gr.Markdown("""<h1><center>ChatGPT BOT build by revChatGPT & Gradio</center></h1>""")
 
     if not ((email and password) or access_token or session_token):
-        if not args.no_markdown:
-            gr.Markdown("""<h2>Login to OpenAI</h2>""")
+        #if not args.no_markdown:
+        #    gr.Markdown("""<h2>Login to OpenAI</h2>""")
         with gr.Row():
             with gr.Group():
                 method = gr.Dropdown(label="Login Method", choices=login_method)
@@ -126,9 +126,9 @@ with gr.Blocks(css=css) as demo:
             method = "Session token"
             info = session_token
         configure_chatbot(method, info)
-    print("test2");
-    if not args.no_markdown:
-        gr.Markdown("""<h2>Start Chatting ...</h2>""")
+    
+    #if not args.no_markdown:
+    #    gr.Markdown("""<h2>Start Chatting ...</h2>""")
         
     chatbot1 = gr.Chatbot(elem_id="chatbot", show_label=False)
     state = gr.State([])
@@ -140,6 +140,4 @@ with gr.Blocks(css=css) as demo:
     submit.click(chat_clone, inputs=[message, state], outputs=[chatbot1, state])
     submit.click(lambda :"", None, message)
 
-    print("test3");
     demo.launch(server_name="0.0.0.0", debug = True, share=is_google_colab())
-    print("test4");
