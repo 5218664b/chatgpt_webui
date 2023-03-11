@@ -99,7 +99,7 @@ else:
     css = None
 
 with gr.Blocks(css=css) as demo:
-    
+    print("1")
     #args = get_args()
     
     #if not args.no_markdown:
@@ -126,7 +126,7 @@ with gr.Blocks(css=css) as demo:
             method = "Session token"
             info = session_token
         configure_chatbot(method, info)
-    
+    print("2")
     #if not args.no_markdown:
     #    gr.Markdown("""<h2>Start Chatting ...</h2>""")
         
@@ -135,9 +135,9 @@ with gr.Blocks(css=css) as demo:
     message = gr.Textbox(placeholder="Chat here", label="Human: ")
     message.submit(chat_clone, inputs=[message, state], outputs=[chatbot1, state])
     message.submit(lambda :"", None, message)
-    
+    print("3")
     submit = gr.Button("SEND")
     submit.click(chat_clone, inputs=[message, state], outputs=[chatbot1, state])
     submit.click(lambda :"", None, message)
-
+    print("4")
     demo.launch(server_name="0.0.0.0", debug = True, share=is_google_colab())
