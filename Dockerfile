@@ -10,5 +10,5 @@ RUN pip install -r requirements.txt
 
 EXPOSE 7860
 
-CMD ["python", "app.py"]
+CMD ["gradio", "app.py"]
 # docker run -p 7860:7860 -d -it chatgpt_webui
