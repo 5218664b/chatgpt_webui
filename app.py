@@ -97,7 +97,7 @@ if ((email and password) or access_token or session_token):
     css = "style.css"
 else:
     css = None
-
+print("test1");
 with gr.Blocks(css=css) as demo:
     
     args = get_args()
@@ -126,7 +126,7 @@ with gr.Blocks(css=css) as demo:
             method = "Session token"
             info = session_token
         configure_chatbot(method, info)
-    
+    print("test2");
     if not args.no_markdown:
         gr.Markdown("""<h2>Start Chatting ...</h2>""")
         
@@ -140,6 +140,6 @@ with gr.Blocks(css=css) as demo:
     submit.click(chat_clone, inputs=[message, state], outputs=[chatbot1, state])
     submit.click(lambda :"", None, message)
 
-    print("test1");
+    print("test3");
     demo.launch(server_name="0.0.0.0", debug = True, share=is_google_colab())
-    print("test2");
+    print("test4");
