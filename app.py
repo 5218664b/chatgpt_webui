@@ -140,4 +140,6 @@ with gr.Blocks(css=css) as demo:
     submit.click(chat_clone, inputs=[message, state], outputs=[chatbot1, state])
     submit.click(lambda :"", None, message)
 
+    print("test1");
     demo.launch(server_name="0.0.0.0", debug = True, share=is_google_colab())
+    print("test2");

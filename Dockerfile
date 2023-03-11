@@ -1,5 +1,5 @@
-FROM nyjaqe6a.mirror.aliyuncs.com/library/python:3.8.2
-#FROM nyjaqe6a.mirror.aliyuncs.com/library/python:3.8.2-alpine
+#FROM nyjaqe6a.mirror.aliyuncs.com/library/python:3.8.2
+FROM nyjaqe6a.mirror.aliyuncs.com/library/python:3.8.2-alpine
 ADD . /app
 WORKDIR /app
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
